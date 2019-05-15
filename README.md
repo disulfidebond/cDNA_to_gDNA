@@ -2,10 +2,10 @@
 Work on reconstructing gDNA from cDNA Macca mulatta MHC sequences
 
 Current Workflow is:
-1) preprocess IPD file and create multifasta file of allele:exon
-2) import cdna2gdna.py
-3) run combine_output_using_bash.md
-4) run parse_check_output.md
+1) preprocess IPD file and create multifasta file of allele:exon **(complete)**
+2) import cdna2gdna.py **(complete)**
+3) run combine_output_using_bash.md **(complete)**
+4) run parse_check_output.md **(complete)**
 5) collect sequences where both pairs of reads mapped, run _de novo_ assembly
 6) use draft consensus from step 5 with unpaired sequences, then re-run _de novo_ assembly
 7) test results by mapping against gDNA, both published Mamu10 and SRA sequences.  Accuracy should be > 90% in both cases.

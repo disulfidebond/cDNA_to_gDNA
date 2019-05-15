@@ -14,3 +14,4 @@ Parallel tasks:
         # run from directory of files with the format SRRXXXXX_1.fastq
         ls -lah | grep '\.[[:digit:]]G*' | rev | cut -d. -f2 | cut -d\  -f1 | rev | cut -d_ -f1 | sort -n | uniq > listOfSRIDs.txt
         
+* These are genomic reads, and can be used for subsequent downstream steps to find gDNA. Retrieve from SRA using curl or similar tool.

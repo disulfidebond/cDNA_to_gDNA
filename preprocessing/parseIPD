@@ -1,0 +1,15 @@
+#!/bin/sh
+
+NHPNAME=$(echo "$1")
+FNAME=$2
+OUTSTR1=$(echo "$NHPNAME" | cut -d\  -f1)
+OUTSTR2=$(echo "$NHPNAME" | cut -d\  -f2)
+OUTSTRING1=$(echo "${OUTSTR1}_${OUTSTR2}_listOfIDs.txt")
+OUTSTRING2=$(echo "${OUTSTR1}_${OUTSTR2}_listOfIDs.parsedIDs.txt")
+OFILE=$(echo "${OUTSTR1}_${OUTSTR2}_listOfIDs.parsed.txt")
+grep -B16 "$NHPNAME" $FNAME > $OUTSTRING1
+grep 'ID   ' $OUTSTRING1 > $OUTSTRING2
+perl -p -e 's/ID\s+//g' "$OUTSTRING2" > $OFILE
+rm $OUTSTRING1
+rm $OUTSTRING2
+
